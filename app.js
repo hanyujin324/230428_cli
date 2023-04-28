@@ -3,7 +3,7 @@
 title 태그의 기본정보
 body 태그의 자식으로서 최상위 div #root 태그 사용 유무 선택가능한 방식 
 본문<p> 태그 내용작성
-3. 위 abc 항을 모두 충족하는 형태의 CLI 입력을 모두 받고, 입력데이터를 기초데이터로 HTML파일이 /result 디렉토리에 생성(create) 
+3. 위 abc 항을 모두 충족하는 형태의 CLI 입력을 모두 받고, 입력데이터를 기초데이터로 HTML파일이 /result 디렉토리에 생성(create)  
  */
 
 //commander과 inquirer을 불러냄 +fs
@@ -13,7 +13,7 @@ import fs from "fs";
 
 // html 생성
 const htmlS = (titleName, rootMaker, pMaker) => `
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 
 <head>
