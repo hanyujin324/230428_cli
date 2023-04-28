@@ -94,21 +94,13 @@ const htmlMake = htmlS(titleMaker, rootMaker, pMaker);
 fs.writeFileSync("./result", htmlMake);
 
 // 아래는 이것저것 적은 코드이다.
-const { title, root, p } = htmlCreate;
-inquirer
-  .prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "root를 만들겠습니까?",
-    },
-  ])
-  // 에러인 경우
-  .catch((error) => {
-    if (error.isError) {
-      // 작성하기
-    }
-  });
+// 에러인 경우
+inquirer.catch((error) => {
+  if (error.isError) {
+    // 작성하기
+  }
+});
+
 // 만든다고 했을 때 콘솔창에 '만든다'는 멘트가 보이게 한다.(실제로 만드는건 inquirer로 한다.) (필요 없을 듯)
 const maker = program.command("yes");
 maker.action(() => {
@@ -116,6 +108,7 @@ maker.action(() => {
 });
 program.parse(process.argv);
 
-/* commander과 inquirer을 이용하여 html을 만든다. 
+/* 하려고 했던 것:
+commander과 inquirer을 이용하여 html을 만든다. 
 title의 이름을 받고 그 값으로 title이 보여진다.
 div id가 root인 태그를 만들지 inquirer을 사용하여 list형식으로 1을 입력했다면 만들어지고 2를 입력했다면 생성되지않게 한다. p태그안에 들어갈 내용을 받고 입력받은 값을 태그안에 넣어 화면에 보이게 한다. 만들어진 html파일은 fs를 통해 result디렉터리로 생성이 된다 */
